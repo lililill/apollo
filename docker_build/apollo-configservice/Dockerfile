@@ -12,10 +12,10 @@ RUN apk add --update --no-cache ttf-dejavu fontconfig busybox-extras iproute2 cu
 #添加常用工具及字符集字体等
 
 ENV APOLLO_RUN_MODE=Docker
-ENV SERVER_PORT=8090
-EXPOSE 8090
+ENV SERVER_PORT=8080
+EXPOSE 8080
 
-COPY ./apollo-adminservice  /apollo-adminservice
+COPY ./apollo-configservice  /apollo-configservice
 #CMD ["/bin/sh", "-c", "tail -f /dev/null"]
-CMD ["/apollo-adminservice/scripts/startup.sh"]
+CMD ["/apollo-configservice/scripts/startup.sh"]
 
