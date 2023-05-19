@@ -18,6 +18,7 @@
 package com.ctrip.framework.apollo.portal.entity.po;
 
 import com.google.common.base.MoreObjects;
+import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,6 +31,7 @@ import javax.persistence.Table;
  * @author lepdou 2022-01-20
  */
 @Entity
+@DynamicInsert
 @Table(name = "Authorities")
 public class Authority {
 

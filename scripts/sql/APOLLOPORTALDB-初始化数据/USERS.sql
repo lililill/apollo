@@ -1,0 +1,1 @@
+INSERT INTO "USERS" ("ID", "USERNAME", "PASSWORD", "USERDISPLAYNAME", "EMAIL", "ENABLED") VALUES ('1', 'apollo', '$2a$10$7r20uS.BQ9uBpf3Baj3uQOZvMVvB1RN3PYoKE94gtz2.WAOuiiwXS', 'apollo', 'apollo@acme.com', '1');

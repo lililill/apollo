@@ -18,6 +18,8 @@ package com.ctrip.framework.apollo.biz.entity;
 
 import com.ctrip.framework.apollo.common.entity.BaseEntity;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
@@ -27,8 +29,10 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
+@DynamicInsert
+@DynamicUpdate
 @Table(name = "Item")
-@SQLDelete(sql = "Update Item set IsDeleted = 1, DeletedAt = ROUND(UNIX_TIMESTAMP(NOW(4))*1000) where Id = ?")
+@SQLDelete(sql = "Update Item set IsDeleted = 1, DeletedAt = 0 where Id = ?")
 @Where(clause = "isDeleted= 0")
 public class Item extends BaseEntity {
 

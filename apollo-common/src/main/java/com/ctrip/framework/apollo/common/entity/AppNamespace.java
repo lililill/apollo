@@ -22,6 +22,8 @@ import com.ctrip.framework.apollo.core.enums.ConfigFileFormat;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+
+import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
@@ -30,8 +32,9 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
+@DynamicInsert
 @Table(name = "AppNamespace")
-@SQLDelete(sql = "Update AppNamespace set IsDeleted = 1, DeletedAt = ROUND(UNIX_TIMESTAMP(NOW(4))*1000) where Id = ?")
+@SQLDelete(sql = "Update AppNamespace set IsDeleted = 1, DeletedAt = 0 where Id = ?")
 @Where(clause = "isDeleted= 0")
 public class AppNamespace extends BaseEntity {
 

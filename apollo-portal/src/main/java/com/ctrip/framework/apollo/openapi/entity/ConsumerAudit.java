@@ -17,6 +17,7 @@
 package com.ctrip.framework.apollo.openapi.entity;
 
 import com.google.common.base.MoreObjects;
+import org.hibernate.annotations.DynamicInsert;
 
 import java.util.Date;
 
@@ -32,6 +33,7 @@ import javax.persistence.Table;
  * @author Jason Song(song_s@ctrip.com)
  */
 @Entity
+@DynamicInsert
 @Table(name = "ConsumerAudit")
 public class ConsumerAudit {
   @Id

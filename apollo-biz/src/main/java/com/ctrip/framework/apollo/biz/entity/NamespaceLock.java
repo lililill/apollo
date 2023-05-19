@@ -18,6 +18,7 @@ package com.ctrip.framework.apollo.biz.entity;
 
 import com.ctrip.framework.apollo.common.entity.BaseEntity;
 
+import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.Column;
@@ -25,6 +26,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
+@DynamicInsert
 @Table(name = "NamespaceLock")
 @Where(clause = "isDeleted= 0")
 public class NamespaceLock extends BaseEntity{

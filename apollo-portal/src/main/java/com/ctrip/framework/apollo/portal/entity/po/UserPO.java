@@ -17,6 +17,7 @@
 package com.ctrip.framework.apollo.portal.entity.po;
 
 import com.ctrip.framework.apollo.portal.entity.bo.UserInfo;
+import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,6 +30,7 @@ import javax.persistence.Table;
  * @author lepdou 2017-04-08
  */
 @Entity
+@DynamicInsert
 @Table(name = "Users")
 public class UserPO {
 

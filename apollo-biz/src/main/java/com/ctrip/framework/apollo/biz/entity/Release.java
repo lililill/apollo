@@ -18,6 +18,7 @@ package com.ctrip.framework.apollo.biz.entity;
 
 import com.ctrip.framework.apollo.common.entity.BaseEntity;
 
+import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
@@ -30,8 +31,9 @@ import javax.persistence.Table;
  * @author Jason Song(song_s@ctrip.com)
  */
 @Entity
+@DynamicInsert
 @Table(name = "Release")
-@SQLDelete(sql = "Update Release set IsDeleted = 1, DeletedAt = ROUND(UNIX_TIMESTAMP(NOW(4))*1000) where Id = ?")
+@SQLDelete(sql = "Update Release set IsDeleted = 1, DeletedAt = 0 where Id = ?")
 @Where(clause = "isDeleted= 0")
 public class Release extends BaseEntity {
   @Column(name = "ReleaseKey", nullable = false)

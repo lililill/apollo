@@ -1,0 +1,1 @@
+INSERT INTO "AUTHORITIES" ("ID", "USERNAME", "AUTHORITY") VALUES ('1', 'apollo', 'ROLE_user');

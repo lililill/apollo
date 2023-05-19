@@ -17,6 +17,7 @@
 package com.ctrip.framework.apollo.biz.entity;
 
 import com.google.common.base.MoreObjects;
+import org.hibernate.annotations.DynamicInsert;
 
 import java.util.Date;
 
@@ -26,6 +27,7 @@ import javax.persistence.*;
  * @author Jason Song(song_s@ctrip.com)
  */
 @Entity
+@DynamicInsert
 @Table(name = "ReleaseMessage")
 public class ReleaseMessage {
   @Id

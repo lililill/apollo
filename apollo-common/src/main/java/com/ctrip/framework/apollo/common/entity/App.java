@@ -19,6 +19,8 @@ package com.ctrip.framework.apollo.common.entity;
 import com.ctrip.framework.apollo.common.utils.InputValidator;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+
+import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
@@ -27,8 +29,9 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
+@DynamicInsert
 @Table(name = "App")
-@SQLDelete(sql = "Update App set IsDeleted = 1, DeletedAt = ROUND(UNIX_TIMESTAMP(NOW(4))*1000) where Id = ?")
+@SQLDelete(sql = "Update App set IsDeleted = 1, DeletedAt = 0 where Id = ?")
 @Where(clause = "isDeleted= 0")
 public class App extends BaseEntity {
 
